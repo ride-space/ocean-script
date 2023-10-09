@@ -9,7 +9,7 @@
     "lint": "next lint",
     "pages:build": "pnpm dlx @cloudflare/next-on-pages@1",
     "pages:deploy": "pnpm run pages:build && wrangler pages deploy .vercel/output/static",
-    "pages:watch": "pnpm @cloudflare/next-on-pages@1 --watch",
+    "pages:watch": "pnpm dlx @cloudflare/next-on-pages --watch",
     "pages:dev": "pnpm wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat"
   },
   "dependencies": {
@@ -28,7 +28,16 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-next-on-pages": "^1.6.3",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-organize-imports": "^3.2.3",
     "vercel": "^32.4.1",
     "wrangler": "^3.11.0"
   }
