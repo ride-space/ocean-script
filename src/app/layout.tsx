@@ -1,9 +1,9 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+import { NextUIProviders } from '@/providers';
+import { LocalFontProviders } from '@/providers/LocalFontProviders';
 
 export const metadata: Metadata = {
   title: 'Ocean Script',
@@ -17,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ja'>
-      <body className={inter.className}>{children}</body>
+      <body>
+        <NextUIProviders>
+          <LocalFontProviders>{children}</LocalFontProviders>
+        </NextUIProviders>
+      </body>
     </html>
   );
 }
