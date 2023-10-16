@@ -50,6 +50,9 @@ dependencies:
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3
+  tocbot:
+    specifier: ^4.21.2
+    version: 4.21.2
   typescript:
     specifier: 5.2.2
     version: 5.2.2
@@ -6564,6 +6567,10 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+
+  /tocbot@4.21.2:
+    resolution: {integrity: sha512-R5Muhi/TUu4i4snWVrMgNoXyJm2f8sJfdgIkQvqb+cuIXQEIMAiWGWgCgYXHqX4+XiS/Bnm7IYZ9Zy6NVe6lhw==}
+    dev: false
 
   /toidentifier@1.0.0:
     resolution: {integrity: sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==}
