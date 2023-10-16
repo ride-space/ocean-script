@@ -8,19 +8,24 @@ import {
 import Link from 'next/link';
 import { FaSistrix, FaSquareXTwitter } from 'react-icons/fa6';
 
+import { ThemeSwitcher } from '@/components/common';
+
 export const Header = () => {
   return (
     <Navbar shouldHideOnScroll className=''>
       <NavbarBrand>Ocean Script</NavbarBrand>
-      <NavbarContent justify='end'>
-        <NavbarItem className='hidden lg:flex '>
-          <Link href='#' className='flex items-center'>
-            <FaSquareXTwitter />
+      <NavbarContent justify='end' className='gap-x-6' >
+        <NavbarItem >
+          <ThemeSwitcher />
+        </NavbarItem>
+        <NavbarItem className=' '>
+          <Link href='#' className='inline-block'>
+            <FaSquareXTwitter size={20} />
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <button>
-            <FaSistrix />
+          <button className='inline-block'>
+            <FaSistrix size={20} />
           </button>
         </NavbarItem>
       </NavbarContent>
