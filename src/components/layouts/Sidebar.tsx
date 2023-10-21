@@ -1,4 +1,5 @@
-import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card';
+import { Card,  CardFooter, CardHeader } from '@nextui-org/card';
+import { ScrollShadow } from '@nextui-org/react';
 import { User } from '@nextui-org/user';
 
 export const Sidebar = () => {
@@ -14,7 +15,7 @@ export const Sidebar = () => {
             }}
           />
         </CardHeader>
-        <CardBody className='px-3 py-0 text-small text-default-400'>
+        <div className='px-3 py-0 text-small text-default-400'>
           <p>
             Frontend developer and UI/UX enthusiast. Join me on this coding
             adventure!
@@ -25,7 +26,7 @@ export const Sidebar = () => {
               💻
             </span>
           </span>
-        </CardBody>
+        </div>
         <CardFooter className='gap-3'>
           <div className='flex gap-1'>
             <p className='text-small font-semibold text-default-400'>4</p>
@@ -36,6 +37,9 @@ export const Sidebar = () => {
             <p className='text-small text-default-400'>Followers</p>
           </div>
         </CardFooter>
+      </Card>
+      <Card className='sticky '>
+        <ScrollShadow id='tocNav' className='h-[20px]'></ScrollShadow>
       </Card>
     </aside>
   );
