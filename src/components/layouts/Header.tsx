@@ -13,9 +13,11 @@ import { ThemeSwitcher } from '@/components/common';
 export const Header = () => {
   return (
     <Navbar shouldHideOnScroll className=''>
-      <NavbarBrand>Ocean Script</NavbarBrand>
-      <NavbarContent justify='end' className='gap-x-6' >
-        <NavbarItem >
+      <NavbarBrand>
+        <Link href='/'>Ocean Script</Link>
+      </NavbarBrand>
+      <NavbarContent justify='end' className='gap-x-6'>
+        <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarItem className=' '>
