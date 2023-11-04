@@ -2,6 +2,7 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 
+import { BaseLayout } from '@/components/layouts';
 import { NextUIProviders } from '@/providers';
 import { LocalFontProviders } from '@/providers/LocalFontProviders';
 
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang='ja'>
       <body>
         <NextUIProviders>
-          <LocalFontProviders>{children}</LocalFontProviders>
+          <LocalFontProviders>
+            <BaseLayout>{children}</BaseLayout>
+          </LocalFontProviders>
         </NextUIProviders>
       </body>
     </html>

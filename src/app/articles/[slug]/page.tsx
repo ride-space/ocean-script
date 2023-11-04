@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { MainWrap } from '@/components/layouts';
 import { getArticleBySlug, getArticles } from '@/lib/newt';
 
 type Props = {
@@ -31,9 +32,11 @@ export default async function ArticleById({ params }: Props) {
   const article = await getArticleBySlug(slug);
   if (!article) return;
   return (
-    <article id='article'>
-      <h1>{article.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: article.body }} />
-    </article>
+    <MainWrap slug={slug}>
+      <article id='article'>
+        <h1>{article.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: article.body }} />
+      </article>
+    </MainWrap>
   );
 }

@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { FaSistrix, FaSquareXTwitter } from 'react-icons/fa6';
 
 import { ThemeSwitcher } from '@/components/common';
+import { x } from '@/const/urls';
 
 export const Header = () => {
   return (
@@ -21,7 +22,11 @@ export const Header = () => {
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarItem className=' '>
-          <Link href='#' className='inline-block'>
+          <Link
+            href={x}
+            target='blank'
+            rel='noopener noreferrer'
+            className='inline-block'>
             <FaSquareXTwitter size={20} />
           </Link>
         </NavbarItem>
