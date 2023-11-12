@@ -1,10 +1,12 @@
 import { MainWrap } from '@/components/layouts';
 
+import { Form } from './Form';
+
 export default async function Contact() {
   return (
     <MainWrap>
       <section>
-        <h2 className='my-10 text-center text-2xl md:text-2xl'>お問い合わせ</h2>
+        <Form />
       </section>
     </MainWrap>
   );
