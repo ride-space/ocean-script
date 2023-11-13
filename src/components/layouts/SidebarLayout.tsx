@@ -1,20 +1,15 @@
 'use client';
-import { useEffect } from 'react';
-import tocbot from 'tocbot';
-
 import { Card, CardFooter, CardHeader } from '@nextui-org/card';
 import { ScrollShadow } from '@nextui-org/react';
 import { User } from '@nextui-org/user';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { FaSquareXTwitter } from 'react-icons/fa6';
+import tocbot from 'tocbot';
 
 import { x } from '@/const/urls';
 
-export const SidebarLayout = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+export const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     tocbot.init({
       tocSelector: '#tocNav',
@@ -26,7 +21,7 @@ export const SidebarLayout = ({
     return () => tocbot.destroy();
   }, []);
   return (
-    <div className='grid grid-cols-[1fr_300px] gap-x-10 pb-24 pt-14'>
+    <div className='grid grid-cols-1 gap-x-10 pb-24 pt-14 md:grid-cols-[1fr_300px]'>
       <div className='py-10'>{children}</div>
       <Sidebar />
     </div>
