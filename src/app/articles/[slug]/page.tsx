@@ -35,7 +35,7 @@ export default async function ArticleById({ params }: Props) {
     <MainWrap slug={slug}>
       <article id='article'>
         <h1>{article.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: article.body }} />
+        <div className='prose dark:prose-invert' dangerouslySetInnerHTML={{ __html: article.body }} />
       </article>
     </MainWrap>
   );
