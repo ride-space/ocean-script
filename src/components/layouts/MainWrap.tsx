@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { Breadcrumb } from './Breadcrumb';
+import { createPageLayoutItems } from './createPageLayoutItems';
 import { MainVisual } from './MainVisual';
 import { SidebarLayout } from './SidebarLayout';
-import { createPageLayoutItems } from './createPageLayoutItems';
 
 export const MainWrap = async ({
   children,

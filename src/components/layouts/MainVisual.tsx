@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import { PageLayoutItems } from './createPageLayoutItems';
 
 export const MainVisual = ({ pageItems }: { pageItems: PageLayoutItems }) => (
