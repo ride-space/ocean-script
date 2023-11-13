@@ -1,5 +1,6 @@
-import { getArticleBySlug } from '@/lib/newt';
 import { headers } from 'next/headers';
+
+import { getArticleBySlug } from '@/lib/newt';
 
 export type PageLayoutItems = {
   title: string;
