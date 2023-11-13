@@ -1,30 +1,24 @@
-'use client' // Error components must be Client Components
+'use client';
 
-import { useEffect } from 'react'
+import { Button } from '@nextui-org/react';
+import { useEffect } from 'react';
 
 export default function Error({
   error,
   reset,
 }: {
-  error: Error & { digest?: string }
-  reset: () => void
+  error: Error & { digest?: string };
+  reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error)
-  }, [error])
+    console.error(error);
+  }, [error]);
 
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
-      >
-        Try again
-      </button>
+    <div className='flex min-h-full flex-col items-center justify-center gap-6'>
+      <h2>エラーが発生しました。</h2>
+      <p>申し訳ございませんが下記のボタンを押してリセットをしてください。</p>
+      <Button onClick={() => reset()}>リセット</Button>
     </div>
-  )
+  );
 }
