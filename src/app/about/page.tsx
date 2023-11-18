@@ -1,4 +1,11 @@
+import { Metadata } from 'next';
+
 import { MainWrap } from '@/components/layouts';
+
+export const metadata: Metadata = {
+  title: '執筆者について',
+  description: 'このブログの執筆者についての説明ページです。',
+};
 
 export default async function About() {
   return (
