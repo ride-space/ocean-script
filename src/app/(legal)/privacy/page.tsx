@@ -1,4 +1,11 @@
+import { Metadata } from 'next';
+
 import { MainWrap } from '@/components/layouts';
+
+export const metadata: Metadata = {
+  title: 'プライバシーポリシー',
+  description: 'このブログのプライバシーポリシーです。',
+};
 
 export default async function Privacy() {
   return (

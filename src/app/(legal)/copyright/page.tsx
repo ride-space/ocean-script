@@ -1,4 +1,12 @@
+import { Metadata } from 'next';
+
 import { MainWrap } from '@/components/layouts';
+
+export const metadata: Metadata = {
+  title: '利用規約・免責・著作権',
+  description:
+    'このブログの利用規約・免責・著作権です。',
+};
 
 export default async function Copyright() {
   return (

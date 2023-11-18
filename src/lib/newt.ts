@@ -3,7 +3,7 @@ import 'server-only';
 import { createClient } from 'newt-client-js';
 import { cache } from 'react';
 
-import { Article } from '@/types/article';
+import { Article, ArticleListItem } from '@/types/article';
 
 const client = createClient({
   spaceUid: process.env.NEWT_SPACE_UID + '',
@@ -12,17 +12,17 @@ const client = createClient({
 });
 
 export const getArticles = cache(async () => {
-  const { items } = await client.getContents<Article>({
+  const { items } = await client.getContents<ArticleListItem>({
     appUid: 'blog',
     modelUid: 'article',
     query: {
-      select: ['_id', 'title', 'slug', 'body', 'coverImage'],
+      select: ['_id','_sys', 'title', 'slug','coverImage'],
     },
   });
   return items;
 });
 export const getPickUpArticles = cache(async () => {
-  const { items } = await client.getContents<Article>({
+  const { items } = await client.getContents<ArticleListItem>({
     appUid: 'blog',
     modelUid: 'article',
     query: {
