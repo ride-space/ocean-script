@@ -32,9 +32,6 @@ export default async function Home() {
   );
 }
 
-const sleep = (waitTime: number) =>
-  new Promise(resolve => setTimeout(resolve, waitTime));
-
 const SkeletonCards = () => (
   <>
     <SkeletonCard />
@@ -44,13 +41,11 @@ const SkeletonCards = () => (
 );
 
 const PickUpArticles = async () => {
-  await sleep(5000);
   const pickUpArticles = await getPickUpArticles();
   return pickUpArticles.map(article => <Card key={article._id} {...article} />);
 };
 
 const Articles = async () => {
-  await sleep(10000);
   const articles = await getArticles();
   return articles.map(article => <Card key={article._id} {...article} />);
 };
