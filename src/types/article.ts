@@ -1,3 +1,27 @@
+export type ArticleListItem =  {
+  _id: string,
+  title: string,
+  slug: string,
+  coverImage: {
+    _id: string,
+    altText: string,
+    description: string,
+    fileName: string,
+    fileSize: number,
+    fileType: string,
+    height: number,
+    // metadata: {},
+    src: string,
+    title: string,
+    width: number
+  },
+  _sys: {
+    // raw: [Object],
+    createdAt: '2021-12-09T02:21:30.173Z',
+    updatedAt: '2022-09-20T10:20:59.606Z'
+  }
+}
+
 export type Article = {
   _id: string;
   title: string;
@@ -18,53 +42,3 @@ export type Article = {
   };
 };
 
-// {
-//   "_id": "_id",
-//   "_sys": {
-//     "createdAt": "2022-01-01T00:00:00.000Z",
-//     "updatedAt": "2022-01-01T00:00:00.000Z",
-//     "raw": {
-//       "createdAt": "2022-01-01T00:00:00.000Z",
-//       "updatedAt": "2022-01-01T00:00:00.000Z",
-//       "firstPublishedAt": "2022-01-01T00:00:00.000Z",
-//       "publishedAt": "2022-01-01T00:00:00.000Z"
-//     }
-//   },
-//   "title": "text",
-//   "slug": "text",
-//   "meta": {
-//     "title": "text",
-//     "description": "text",
-//     "ogImage": {
-//       "_id": "imageId",
-//       "src": "imageUrl",
-//       "fileName": "example.png",
-//       "fileType": "image/png",
-//       "fileSize": 12345678,
-//       "width": 600,
-//       "height": 400,
-//       "title": "example",
-//       "altText": "example image",
-//       "description": "",
-//       "metadata": {}
-//     }
-//   },
-//   "body": "<p>Plain text is available using the fmt operator.</p>",
-//   "coverImage": {
-//     "_id": "imageId",
-//     "src": "imageUrl",
-//     "fileName": "example.png",
-//     "fileType": "image/png",
-//     "fileSize": 12345678,
-//     "width": 600,
-//     "height": 400,
-//     "title": "example",
-//     "altText": "example image",
-//     "description": "",
-//     "metadata": {}
-//   },
-//   "author": "referenceId",
-//   "tags": [
-//     "referenceId"
-//   ]
-// }

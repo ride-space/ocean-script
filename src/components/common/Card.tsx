@@ -3,9 +3,9 @@ import { Skeleton } from '@nextui-org/skeleton';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Article } from '@/types/article';
+import { ArticleListItem } from '@/types/article';
 
-export const Card = ({ title, slug, coverImage }: Article) => {
+export const Card = ({ title, slug, coverImage }: ArticleListItem) => {
   return (
     <CardWrap
       as={Link}
