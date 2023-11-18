@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 import { MainWrap } from '@/components/layouts';
+import { descriptionMaxLength } from '@/const/urls';
+import { truncateText } from '@/features';
 import { getArticleBySlug, getArticles } from '@/lib/newt';
 
 type Props = {
@@ -20,10 +22,11 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
   const article = await getArticleBySlug(slug);
+  const description = truncateText(article?.body || '', descriptionMaxLength);
 
   return {
     title: article?.title,
-    description: '投稿詳細ページです',
+    description,
   };
 }
 
@@ -35,7 +38,10 @@ export default async function ArticleById({ params }: Props) {
     <MainWrap slug={slug}>
       <article id='article'>
         <h1>{article.title}</h1>
-        <div className='prose dark:prose-invert' dangerouslySetInnerHTML={{ __html: article.body }} />
+        <div
+          className='prose dark:prose-invert'
+          dangerouslySetInnerHTML={{ __html: article.body }}
+        />
       </article>
     </MainWrap>
   );
