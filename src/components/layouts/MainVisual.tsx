@@ -20,7 +20,7 @@ const BackgroundImage = ({ children }: { children: React.ReactNode }) => (
       className={
         'absolute bottom-0 left-0 z-10 ' +
         'h-[69.1%] w-full ' +
-        'bg-gradient-to-t from-black  opacity-40'
+        'bg-gradient-to-t from-black  opacity-70'
       }
     />
     {children}
