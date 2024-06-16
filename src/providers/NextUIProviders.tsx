@@ -3,6 +3,7 @@
 import { NextUIProvider } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { ViewTransitions } from 'next-view-transitions';
 
 export const NextUIProviders = ({
   children,
@@ -11,10 +12,12 @@ export const NextUIProviders = ({
 }) => {
   const router = useRouter();
   return (
-    <NextUIProvider navigate={router.push}>
-      <NextThemesProvider attribute='class' defaultTheme='dark'>
-        {children}
-      </NextThemesProvider>
-    </NextUIProvider>
+    <ViewTransitions>
+      <NextUIProvider navigate={router.push}>
+        <NextThemesProvider attribute='class' defaultTheme='dark'>
+          {children}
+        </NextThemesProvider>
+      </NextUIProvider>
+    </ViewTransitions>
   );
 };

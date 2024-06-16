@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Breadcrumb } from './Breadcrumb';
 import { createPageLayoutItems } from './createPageLayoutItems';
 import { MainVisual } from './MainVisual';

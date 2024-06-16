@@ -1,17 +1,14 @@
-'use client'
 
 import Link from 'next/link';
-import { useTheme } from 'next-themes';
 import { FaRegCopyright } from 'react-icons/fa6';
 
 export const Footer = () => {
-  const { theme } = useTheme()
 
   return (
-    <footer className={`bg-[#18181B] ${theme === 'light'&& '!bg-[#f5f5f5]'}`}>
+    <footer className="bg-[#f5f5f5] dark:bg-[#18181B]">
       <div
         className={
-          'mx-auto w-full px-6 md:max-w-5xl pt-10 pb-6 ' + //
+          'mx-auto w-full px-6 md:max-w-6xl pt-10 pb-6 ' + //
           'grid grid-cols-1 gap-y-6 '
         }>
         <div

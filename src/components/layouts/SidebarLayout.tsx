@@ -14,15 +14,19 @@ export const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
     tocbot.init({
       tocSelector: '#tocNav',
       contentSelector: '#article',
-      headingSelector: 'h2, h3',
+      headingSelector: 'h1, h2, h3',
       hasInnerContainers: true,
+      collapseDepth: 6,
+      scrollSmooth: true,
+      scrollSmoothDuration: 420,
+      scrollSmoothOffset: -100,
     });
 
     return () => tocbot.destroy();
   }, []);
   return (
-    <div className='grid grid-cols-1 gap-x-10 pb-24 pt-14 md:grid-cols-[1fr_300px]'>
-      <div className='py-10'>{children}</div>
+    <div className='flex w-full gap-x-10'>
+      <div className='w-[70%] pb-20 pt-12'>{children}</div>
       <Sidebar />
     </div>
   );
@@ -30,7 +34,7 @@ export const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
 
 export const Sidebar = () => {
   return (
-    <aside>
+    <aside className='w-[calc(30%_-_40px)]'>
       <Card>
         <CardHeader className='justify-between'>
           <User

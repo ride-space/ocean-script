@@ -33,14 +33,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ArticleById({ params }: Props) {
   const { slug } = params;
   const article = await getArticleBySlug(slug);
-  if (!article) return;
+  let modifiedHTML = '';
+  if (article && article.body) {
+    const encodeTextForId = (text: string) => {
+      return encodeURIComponent(text).replace(/[!'()*]/g, c => {
+        return '%' + c.charCodeAt(0).toString(16);
+      });
+    };
+
+    modifiedHTML = article.body.replace(
+      /<(h1|h2|h3)[^>]*>(.*?)<\/\1>/g,
+      (match, group, innerText) => {
+        const encodedText = encodeTextForId(innerText);
+        return `<${group} id="${encodedText}">${innerText}</${group}>`;
+      }
+    );
+  } else {
+    return;
+  }
+
   return (
     <MainWrap slug={slug}>
       <article id='article'>
-        <h1>{article.title}</h1>
         <div
-          className='prose dark:prose-invert'
-          dangerouslySetInnerHTML={{ __html: article.body }}
+          className='prose break-all dark:prose-invert'
+          dangerouslySetInnerHTML={{ __html: modifiedHTML }}
         />
       </article>
     </MainWrap>

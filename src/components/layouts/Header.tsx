@@ -1,4 +1,3 @@
-'use client';
 import {
   Navbar,
   NavbarBrand,
@@ -6,6 +5,7 @@ import {
   NavbarItem,
 } from '@nextui-org/react';
 import Link from 'next/link';
+import { Link as TransitionLink } from 'next-view-transitions'
 import { FaSistrix, FaSquareXTwitter } from 'react-icons/fa6';
 
 import { ThemeSwitcher } from '@/components/common';
@@ -13,9 +13,9 @@ import { x } from '@/const/urls';
 
 export const Header = () => {
   return (
-    <Navbar shouldHideOnScroll className=''>
+    <Navbar maxWidth="2xl" shouldHideOnScroll>
       <NavbarBrand>
-        <Link href='/'>Ocean Script</Link>
+        <TransitionLink href='/'>Ocean Script</TransitionLink>
       </NavbarBrand>
       <NavbarContent justify='end' className='gap-x-6'>
         <NavbarItem>

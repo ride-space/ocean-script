@@ -25,8 +25,8 @@ export const createPageLayoutItems = async (
   if (path.startsWith('/articles') && slug) {
     const article = await getArticleBySlug(slug);
     return {
-      title: 'Article',
-      subTitle: article?.title || '',
+      title: article?.title || "Articles",
+      subTitle:  article?.slug || '',
       href: `/articles/${article?.slug}`,
       isBreadcrumb: true,
       isSidebar: true,
