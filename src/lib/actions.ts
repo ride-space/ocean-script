@@ -20,7 +20,6 @@ const contactSchema = z.object({
     .max(20, '20文字以下で入力してください'),
   email: z
     .string()
-    .min(1, '入力してください')
     .max(126, '126文字以下で入力してください')
     .email('メールアドレスの形式で入力してください'),
   subject: z.string().max(150, '150文字以下で入力してください'),
