@@ -1,26 +1,28 @@
-export type ArticleListItem =  {
-  _id: string,
-  title: string,
-  slug: string,
+export type ArticleListItem = {
+  _id: string;
+  title: string;
+  slug: string;
   coverImage: {
-    _id: string,
-    altText: string,
-    description: string,
-    fileName: string,
-    fileSize: number,
-    fileType: string,
-    height: number,
+    _id: string;
+    altText: string;
+    description: string;
+    fileName: string;
+    fileSize: number;
+    fileType: string;
+    height: number;
     // metadata: {},
-    src: string,
-    title: string,
-    width: number
-  },
+    src: string;
+    title: string;
+    width: number;
+  };
   _sys: {
     // raw: [Object],
-    createdAt: '2021-12-09T02:21:30.173Z',
-    updatedAt: '2022-09-20T10:20:59.606Z'
-  }
-}
+    createdAt: '2021-12-09T02:21:30.173Z';
+    updatedAt: '2022-09-20T10:20:59.606Z';
+  };
+  tags: { name: string; slug: string }[];
+  category: { name: string; slug: string };
+};
 
 export type Article = {
   _id: string;
@@ -40,5 +42,7 @@ export type Article = {
     description: string;
     // metadata: {};
   };
-};
 
+  tags: { name: string; slug: string }[];
+  category: { name: string; slug: string };
+};

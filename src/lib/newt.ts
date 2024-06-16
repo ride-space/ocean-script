@@ -16,9 +16,18 @@ export const getArticles = cache(async () => {
     appUid: 'blog',
     modelUid: 'article',
     query: {
-      select: ['_id','_sys', 'title', 'slug','coverImage'],
+      select: [
+        '_id',
+        '_sys',
+        'title',
+        'slug',
+        'coverImage',
+        'tags',
+        'category',
+      ],
     },
   });
+
   return items;
 });
 export const getPickUpArticles = cache(async () => {
@@ -26,7 +35,7 @@ export const getPickUpArticles = cache(async () => {
     appUid: 'blog',
     modelUid: 'article',
     query: {
-      select: ['_id', 'title', 'slug', 'body'],
+      select: ['_id', 'title', 'slug', 'body', 'tags', 'category'],
       limit: 3,
     },
   });
@@ -39,8 +48,10 @@ export const getArticleBySlug = cache(async (slug: string) => {
     modelUid: 'article',
     query: {
       slug,
-      select: ['_id', 'title', 'slug', 'body', 'coverImage'],
+      select: ['_id', 'title', 'slug', 'body', 'coverImage', 'category'],
     },
   });
+  console.log(article?.tags);
+
   return article;
 });

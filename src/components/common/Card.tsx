@@ -1,15 +1,20 @@
-import { Card as CardWrap,CardBody } from '@nextui-org/card';
+import { CardBody, Card as CardWrap } from '@nextui-org/card';
 import { Image } from '@nextui-org/image';
 import { Skeleton } from '@nextui-org/skeleton';
 import { Link as TransitionLink } from 'next-view-transitions';
 
 import { ArticleListItem } from '@/types/article';
 
-export const Card = ({ title, slug, coverImage }: ArticleListItem) => {
+export const Card = ({
+  title,
+  slug,
+  coverImage,
+  category,
+}: ArticleListItem) => {
   return (
     <CardWrap
       as={TransitionLink}
-      href={`articles/${slug}`}
+      href={`articles/${category.slug}/${slug}`}
       className=''
       isPressable
       fullWidth
