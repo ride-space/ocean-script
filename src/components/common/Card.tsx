@@ -15,7 +15,6 @@ export const Card = ({
     <CardWrap
       as={TransitionLink}
       href={`articles/${category.slug}/${slug}`}
-      className=''
       isPressable
       fullWidth
       isHoverable>
