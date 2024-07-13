@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { PageLayoutItems } from './createPageLayoutItems';
 
 export const MainVisual = ({ pageItems }: { pageItems: PageLayoutItems }) => (
@@ -9,13 +7,12 @@ export const MainVisual = ({ pageItems }: { pageItems: PageLayoutItems }) => (
 );
 const BackgroundImage = ({ children }: { children: React.ReactNode }) => (
   <section className='relative left-0 z-10 mx-[calc(50%-50vw)] h-60 w-screen md:h-[256px]'>
-    <Image
-      src='/images/main-visual.png'
-      alt='メインビジュアル'
-      className='object-cover'
-      priority
-      fill
-    />
+    <video
+      className='w-full h-60 md:h-[256px] object-cover'
+      src='/video/main-visual.mp4'
+      loop
+      autoPlay
+      muted></video>
     <div
       className={
         'absolute bottom-0 left-0 z-10 ' +
