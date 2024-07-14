@@ -48,10 +48,16 @@ export const getArticleBySlug = cache(async (slug: string) => {
     modelUid: 'article',
     query: {
       slug,
-      select: ['_id', 'title', 'slug', 'body', 'coverImage', 'category'],
+      select: [
+        '_id',
+        'title',
+        'slug',
+        'body',
+        'coverImage',
+        'tags',
+        'category',
+      ],
     },
   });
-  console.log(article?.tags);
-
   return article;
 });
